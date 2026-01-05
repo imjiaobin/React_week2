@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+import 'bootstrap/dist/css/bootstrap.min.css'
 import Products from './Products'
 import LoginForm from './loginForm'
-import './App.css'
+import './assets/style.css'
 
 const API_BASE = "https://ec-course-api.hexschool.io/v2";
 const apiPath = 'jiaobin';
@@ -122,13 +123,13 @@ function App() {
   }
 
   return (
-    <>
+    <body>
       {isAuth ? (
         <Products products={products} tempProduct={tempProduct} onSelectProduct={setTempProduct}/>
       ) : (
         <LoginForm user={formData} handleLogin={handleLogin} handleInputChange={handleInputChange} />
       )}
-    </>
+    </body>
   );
 }
 
